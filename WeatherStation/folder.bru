@@ -1,0 +1,27 @@
+meta {
+  name: WeatherStation
+  seq: 1
+}
+
+auth {
+  mode: oauth2
+}
+
+auth:oauth2 {
+  grant_type: authorization_code
+  callback_url: https://localhost:7202/netatmo/tokenresponse
+  authorization_url: https://api.netatmo.com/oauth2/authorize
+  access_token_url: https://api.netatmo.com/oauth2/token
+  refresh_token_url: https://api.netatmo.com/oauth2/token
+  client_id: {{acflow-clientid}}
+  client_secret: {{acflow-clientsecret}}
+  scope: read_station
+  state: 1234
+  pkce: false
+  credentials_placement: body
+  credentials_id: netamo-ac-credentials
+  token_placement: header
+  token_header_prefix: Bearer
+  auto_fetch_token: true
+  auto_refresh_token: true
+}

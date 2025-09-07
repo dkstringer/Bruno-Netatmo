@@ -1,0 +1,15 @@
+meta {
+  name: GetStationsData
+  type: http
+  seq: 1
+}
+
+get {
+  url: https://api.netatmo.com/api/getstationsdata
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+}
